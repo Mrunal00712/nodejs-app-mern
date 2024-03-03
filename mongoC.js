@@ -28,19 +28,15 @@ const client = new MongoClient(connectionString);
 
 let db;
 
-// Use connect method to connect to the server
-async function connectToMongoDB() {
+// Export a function to connect to MongoDB and return the database object
+export async function connectToMongoDB() {
     try {
         await client.connect();
         console.log("Connected successfully to MongoDB Atlas");
         db = client.db(dbName);
+        return db; // Return the database object
     } catch (err) {
         console.log(err.stack);
         throw new Error('Error connecting to MongoDB Atlas');
     }
 }
-
-connectToMongoDB();
-
-export default db;
-
