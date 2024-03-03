@@ -21,7 +21,9 @@ const clusterUrl = "devcluster.iriyz7t.mongodb.net"; // Replace with your MongoD
 const dbName = "MERN-DEPLOYMENT"; // Replace with your database name
 
 // Construct the connection string
-const connectionString = `mongodb+srv://${username}:${encodeURIComponent(password)}@${clusterUrl}/${dbName}?retryWrites=true&w=majority`;
+//const connectionString = `mongodb+srv://${username}:${encodeURIComponent(password)}@${clusterUrl}/${dbName}?retryWrites=true&w=majority`;
+const connectionString = 'mongodb://localhost:27017/mydatabase';
+
 
 // Create a new MongoClient
 const client = new MongoClient(connectionString);
